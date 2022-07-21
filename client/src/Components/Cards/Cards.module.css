@@ -16,13 +16,25 @@
 	
 }
 
-.container img {
+.img {
 	width: 330px;
 	max-width: 100%;
 	display: flex;
 	justify-content: center;
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
+}
+.containerImg{
+	position: relative;
+}
+.logoImg{
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: solid black 1px;
 }
 .price {
 	display: flex;

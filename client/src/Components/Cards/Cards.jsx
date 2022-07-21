@@ -7,7 +7,11 @@ function Cards({
   }) {
   return (
     <div className={css.container}>
-    <img src={image_url} alt="Product Img" />
+      <div className={css.containerImg}>
+        <img src={image_url} alt="Product Img" className={css.img}/>
+        <img src={image_url} alt="Product Img" className={css.logoImg}/>
+      </div>
+    
     <div className={css.price}>
       <h3>${price}</h3>
     </div>

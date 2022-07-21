@@ -9,7 +9,7 @@ function Home() {
   const products = useAllProducts();
   return (
     <div className={css.container}>
-      <h1>Products</h1>
+      <h1 >Products</h1>
       <div className={css.cardContainer}>
       {products?.map((e) => {
         return (

@@ -22,6 +22,7 @@ function Home() {
               name={e.name} 
               image_url={e.image_url} 
               price={e.price} 
+              brands = {e.brands}
               />
             </NavLink>
           </div>

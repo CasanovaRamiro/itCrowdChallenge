@@ -3,16 +3,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+	background-color: rgba(0, 0, 0, 0.938);
 }
 .overlay{
-    background-color: rgba(0, 0, 0, 0.829);
+   
     height: 100vh;
     position: fixed;
     z-index: 1;
     width: 100%;
 }
 .close{
-	background-color:  rgba(0, 0, 0, 0.671);
 	display: flex;
 	justify-content: center;
 	border-radius: 3px;
@@ -49,13 +49,25 @@
 	
 }
 
-.detailContainer img {
+.img {
 	width: 430px;
 	max-width: 100%;
 	display: flex;
 	justify-content: center;
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
+}
+.containerImg{
+	position: relative;
+}
+.logoImg{
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: solid black 1px;
 }
 .price {
 	display: flex;
@@ -66,5 +78,10 @@
 
 .title {
 	color: rgb(83, 82, 82);
-	margin-left: 10px;
+	margin-right: 10px;
+}
+.description{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

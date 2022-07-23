@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useProductById from "../../../Hooks/useProductById";
+import css from './UpdateProduct.module.css'
 
-
-import { productValidationSchema } from "../../../ValidationSchemas/productUpdateValidationSchema";
 import axios from "axios";
 import UpdateForm from "./UpdateForm";
 function UpdateProduct() {
@@ -16,7 +14,8 @@ function UpdateProduct() {
     navigate("/admin");
   };
   return (
-    <div>
+    <div className={css.container}>
+      <h1>Update Product</h1>
         {productToUpdate.name &&
         <UpdateForm
         productName={productToUpdate.name}

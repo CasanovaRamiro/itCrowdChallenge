@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import useProductById from "../../../Hooks/useProductById";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import { productValidationSchema } from "../../../ValidationSchemas/productUpdateValidationSchema";
 import axios from "axios";
-function UpdateForm({productName,price,description,image_url}) {
+import css from "./UpdateProduct.module.css";
+
+function UpdateForm({ productName, price, description, image_url }) {
   const { id } = useParams();
   const navigate = useNavigate();
- 
- 
- 
-  const updateSubmit = (values) => {
-    axios.put(`/products/${id}`, values);
+
+  const updateSubmit = async (values) => {
+    await axios.put(`/products/${id}`, values);
     navigate("/admin");
   };
   return (
@@ -29,44 +27,67 @@ function UpdateForm({productName,price,description,image_url}) {
       }}
     >
       {({ errors }) => (
-        <Form>
-          <div>
+        <Form className={css.formContainer}>
+          <div className={css.inputContainer}>
             <label htmlFor="name">Name</label>
-            <Field type="text" id="name" name="name" placeholder="Product name" />
+            <Field
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Product name"
+            />
             <ErrorMessage
               name="name"
-              component={() => <div className="error">{errors.name}</div>}
+              component={() => <div className={css.error}>{errors.name}</div>}
             />
           </div>
-          
-          <div>
+
+          <div className={css.inputContainer}>
             <label htmlFor="price">Price</label>
-            <Field type="number" id="price" name="price" placeholder="Product price" />
+            <Field
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Product price"
+            />
             <ErrorMessage
               name="price"
-              component={() => <div className="error">{errors.price}</div>}
+              component={() => <div className={css.error}>{errors.price}</div>}
             />
           </div>
 
-          <div>
+          <div className={css.inputContainer}>
             <label htmlFor="image_url">Image</label>
-            <Field type="text" id="image_url" name="image_url" placeholder="Product url image" />
+            <Field
+              type="text"
+              id="image_url"
+              name="image_url"
+              placeholder="Product url image"
+            />
             <ErrorMessage
               name="image_url"
-              component={() => <div className="error">{errors.image_url}</div>}
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="description">Description</label>
-            <Field as='textarea'  id="description" name="description" placeholder="Product description" />
-            <ErrorMessage
-              name="description"
-              component={() => <div className="error">{errors.description}</div>}
+              component={() => <div className={css.error}>{errors.image_url}</div>}
             />
           </div>
 
-          <button type="submit">Submit</button>
+          <div className={css.inputContainer}>
+            <label htmlFor="description">Description</label>
+            <Field
+              as="textarea"
+              id="description"
+              name="description"
+              placeholder="Product description"
+            />
+            <ErrorMessage
+              name="description"
+              component={() => (
+                <div className={css.error}>{errors.description}</div>
+              )}
+            />
+          </div>
+          <div className={css.inputContainer}>
+            <button  className={css.submit} type="submit">Submit</button>
+          </div>
         </Form>
       )}
     </Formik>

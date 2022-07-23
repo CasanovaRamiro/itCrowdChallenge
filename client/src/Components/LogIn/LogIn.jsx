@@ -11,10 +11,7 @@ function LogIn() {
 				}}
 				validationSchema={loginValidationSchema}
 				onSubmit={(values) => {
-				
-					
 					console.log(values);
-					
 				}}
 			>
 				{({ errors }) => (

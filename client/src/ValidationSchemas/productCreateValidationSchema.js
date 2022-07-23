@@ -4,13 +4,14 @@ export const productValidationSchema = yup.object().shape({
     name:yup
     .string()
     .min(4)
-    .required('sos feo'),
+    .required(),
     image_url:yup
     .string()
     .url()
     .required(),
     price:yup
     .number()
+    .positive()
     .required(),
     description:yup
     .string()

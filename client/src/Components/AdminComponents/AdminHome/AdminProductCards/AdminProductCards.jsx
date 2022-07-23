@@ -3,12 +3,30 @@ import axios from 'axios'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
 import {useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 function AdminProductCards({ name, image_url, price, id , reRender}) {
     const navigate = useNavigate()
-    const deleteProduct = async (id)=> {
-        await axios.delete(`/products/${id}`)
-        reRender()
+    const deleteProduct =  (id)=> {
+      Swal.fire({
+            title: '¿Delete Product?',
+            text: "Once accepted, product cant be recovered!",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Accept, Delete'
+          }).then((result) => {
+            if (result.isConfirmed) {
+				       axios.delete(`/products/${id}`).then(reRender())
+              Swal.fire(
+                'Confirmado!',
+                'Su producto fue eliminado con éxito!',
+                'success'
+              )
+            }
+          })
+        
+        
     }
   return (
     <div className={css.container}>

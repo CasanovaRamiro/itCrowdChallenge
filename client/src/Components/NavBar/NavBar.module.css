@@ -1,24 +1,33 @@
 .container {
-    background-color: #212529;
-    display: flex;
-    justify-content:end;
-    align-items: flex-end;
-    padding: 20px 25px;
-    
+  background-color: #212529;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  padding: 20px 25px;
 }
 .btn {
-    margin-left: 2rem;
-    font-size: 1.5rem;
-    padding: 0.3rem 1.3rem;
-   
-   border-bottom: 2px solid transparent;
-    transition: 1s;
-color: #ced4da;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  padding: 0.3rem 1.3rem;
+  border-bottom: 2px solid transparent;
+  transition: 1s;
+  color: #ced4da;
 }
 
 .btn:hover {
-    transform: scale(1.1);
-    border-bottom: 3px solid #e9ecef;
-    color: #e9ecef;
+  transform: scale(1.1);
+  border-bottom: 3px solid #e9ecef;
+  color: #e9ecef;
 }
 
+@media (max-width: 500px){
+    .container{
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        margin-left: 1rem;
+        font-size: 1rem;
+        padding: 0.1rem 0.6rem;
+    }
+}

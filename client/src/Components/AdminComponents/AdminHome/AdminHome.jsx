@@ -23,10 +23,10 @@ function AdminHome() {
     }, [render]);
     
   return (
-    <div>
-        <h1>Admin Menu</h1>
-        <button onClick={()=>navigate('/admin/createproduct')}>Crate Product</button>
     <div className={css.container}>
+        <h1>Admin Menu</h1>
+        <button className={css.btn} onClick={()=>navigate('/admin/createproduct')}>Crate Product</button>
+    <div className={css.cardContainer}>
         {products?.map((e) => {
         return (
           <div key={e.id}>

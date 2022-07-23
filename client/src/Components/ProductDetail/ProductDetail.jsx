@@ -31,13 +31,11 @@ function ProductDetail() {
         </div>
         <div className={css.price}>
           <h4 className={css.title}>Name: {detail.name}</h4>
-          
         </div>
         <div className={css.description}>
-        <h4 className={css.title}>Description</h4>
-        <h5 className={css.title}>{detail.description}</h5>
+          <h4 className={css.title}>Description</h4>
+          <h5 className={css.title}>{detail.description}</h5>
         </div>
-        
       </div>
     </div>
   );

@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  height: 100px;
+  width: 400px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.856);
+  border-radius: 40px;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+}
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid black 1px;
+}
+.delete {
+  color: rgb(236, 28, 28);
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  transition: 0.3s;
+}
+.delete:hover {
+  color: red;
+  transform: scale(1.1);
+}
+.edit {
+  color: rgb(54, 54, 250);
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  transition: 0.3s;
+}
+.edit:hover {
+  color: rgb(31, 31, 255);
+  transform: scale(1.1);
+}

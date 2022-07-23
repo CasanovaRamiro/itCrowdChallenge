@@ -33,7 +33,7 @@ function AdminProductCards({ name, image_url, price, id , reRender}) {
       <div className={css.containerImg}>
         <img src={image_url} alt="Product Img" className={css.img} />
       </div>
-      <div className={css.price}>
+      <div className={css.titleContainer}>
         <h4 className={css.title}>{name}</h4>
         <h4>${price}</h4>
       </div>

@@ -60,7 +60,7 @@ router.put("/:id", async (req, res) => {
   }
  
   const { name, description, image_url, price } = req.body;
-  if (productToUpdate.dataValues) {
+  if (productToUpdate?.dataValues) {
     try {
       await updateProducts(
         productToUpdate,

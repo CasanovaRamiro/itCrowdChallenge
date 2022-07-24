@@ -47,9 +47,9 @@ DB_PASSWORD=[your postgres Password]
 DB_HOST=localhost
 DB_NAME=itCrowd
 ```
- 8.  Posicionarse dentro del directorio de `api` y realizar `npm start` para iniciar el servidor. 
+ 8.  Posicionarse dentro del directorio de `api` y realizar `npm start` o `npm run dev` para iniciar el servidor. 
  Abrir [http://localhost:3001](http://localhost:3001) para visualizarlo en el navegador.
- 9.  Posicionarse dentro del directorio de `client` y realizar `npm start` para iniciar el servidor. 
+ 9.  Posicionarse dentro del directorio de `client` y realizar `npm run dev` para iniciar el servidor. 
 Abrir [http://localhost:3000](http://localhost:3000) para visualizarlo en el navegador.
 
 ## Link del Deploy

@@ -45,7 +45,7 @@ function AdminHome() {
             className={css.btn}
             onClick={() => navigate("/admin/createproduct")}
           >
-            Crate Product
+            Create Product
           </button>
           <div className={css.cardContainer}>
             {products?.map((e) => {
@@ -76,7 +76,7 @@ function AdminHome() {
             className={css.btn}
             onClick={() => navigate("/admin/createbrand")}
           >
-            Crate Brand
+            Create Brand
           </button>
           <div className={css.cardContainer}>
             {brands?.map((e) => {

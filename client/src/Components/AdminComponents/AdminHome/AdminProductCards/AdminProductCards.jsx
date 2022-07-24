@@ -19,8 +19,8 @@ function AdminProductCards({ name, image_url, price, id , reRender}) {
             if (result.isConfirmed) {
 				       axios.delete(`/products/${id}`).then(reRender())
               Swal.fire(
-                'Confirmado!',
-                'Su producto fue eliminado con éxito!',
+                'Done!',
+                'Your product has been successfully deleted!',
                 'success'
               )
             }

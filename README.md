@@ -17,12 +17,12 @@
 8. Put Brands /brands/:id
 9. Post Brands /brands
 10. Delete Brands /brands/:id
-- DB URL: https://itcrowd-app.herokuapp.com/
+- API URL: https://itcrowd-app.herokuapp.com/
 - Con tiempo me hubiera encantado utilizar TypeScript, los primeros dias lo intenté y me trabé, decidi avanzar con js.
 
 # Front
 
-- Del lado del Front, hice un menu para que el admin pueda crear borrar y eliminar productos, y crear y modificar marcas(no di la opcion de eliminarlas para no generar problemas con productos posiblemente asociados a esas marcas)
+- Del lado del Front, hice un listado de productos y un menu para que el admin pueda crear borrar y eliminar productos, y crear y modificar marcas(no di la opcion de eliminarlas para no generar problemas con productos posiblemente asociados a esas marcas)
 - Librerías utilizadas:
 1. React-router-dom : Para mis rutas del front, suelo hacer todas mis apps con esta libreria.
 2. Formik : Para creacion de formularios, la aprendi durante este projecto y me encantó super util.
@@ -51,3 +51,6 @@ DB_NAME=itCrowd
  Abrir [http://localhost:3001](http://localhost:3001) para visualizarlo en el navegador.
  9.  Posicionarse dentro del directorio de `client` y realizar `npm start` para iniciar el servidor. 
 Abrir [http://localhost:3000](http://localhost:3000) para visualizarlo en el navegador.
+
+## Link del Deploy
+- https://casanova-ramiro-itcrowd-challenge.vercel.app/

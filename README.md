@@ -1,9 +1,9 @@
 # itCrowdChallenge - Casanova Ramiro.
 
 
-## Project Solution
+# Project Solution
 
-# Back
+## Back
 
 - Developed using React, Node JS, Express, Sequelize y Postgres.
 - In the Api I developed CRUDs for both products and brands
@@ -21,7 +21,7 @@
 - API URL: https://itcrowd-app.herokuapp.com/
 - With time I would have loved to use TypeScript, the firsth days I tried but got stuck, so i decided to go forward with JS.
 
-# Front
+## Front
 
 - On the Front side, I rendered a list of products and an admin menu, able to create, delete and update products, and to create and update brands (I skiped the delete option on brands to avoid association problems)
 - Libraries used:
@@ -53,14 +53,14 @@ DB_NAME=itCrowd
  9.  Position yourself in the `client` directory and run `npm run dev` to start the server. 
 Open [http://localhost:3000](http://localhost:3000) to see the app working on the browser.
 
-## Deploy Link
+# Deploy Link
 - https://casanova-ramiro-itcrowd-challenge.vercel.app/
 
 
-## Español
-## Solucion del Proyecto
+# Español
+# Solucion del Proyecto
 
-# Back
+## Back
 
 - Desarrollado utlizando React, Node JS, Express, Sequelize y Postgres.
 - En la Api desarrolle CRUDs tanto para productos como para marcas
@@ -78,7 +78,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the app working on th
 - API URL: https://itcrowd-app.herokuapp.com/
 - Con tiempo me hubiera encantado utilizar TypeScript, los primeros dias lo intenté y me trabé, decidi avanzar con js.
 
-# Front
+## Front
 
 - Del lado del Front, hice un listado de productos y un menu para que el admin pueda crear borrar y eliminar productos, y crear y modificar marcas(no di la opcion de eliminarlas para no generar problemas con productos posiblemente asociados a esas marcas)
 - Librerías utilizadas:
@@ -110,5 +110,5 @@ DB_NAME=itCrowd
  9.  Posicionarse dentro del directorio de `client` y realizar `npm run dev` para iniciar el servidor. 
 Abrir [http://localhost:3000](http://localhost:3000) para visualizarlo en el navegador.
 
-## Link del Deploy
+# Link del Deploy
 - https://casanova-ramiro-itcrowd-challenge.vercel.app/

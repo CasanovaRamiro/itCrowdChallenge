@@ -10,8 +10,8 @@ function UpdateBrand({ id, logo_url, name }) {
   const updateSubmit = async (values) => {
     await axios.put(`/brands/${id}`, values);
     Swal.fire({
-      title: 'Product Created!',
-      text: "the product was successfully created!",
+      title: 'Product Updated!',
+      text: "the product was successfully Updated!",
       showCancelButton: false,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',

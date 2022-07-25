@@ -17,7 +17,7 @@ function AdminProductCards({ name, image_url, price, id , reRender}) {
             confirmButtonText: 'Accept, Delete'
           }).then((result) => {
             if (result.isConfirmed) {
-				       axios.delete(`/products/${id}`).then(reRender())
+				      axios.delete(`/products/${id}`).then(response => {if(response.data){reRender()}})
               Swal.fire(
                 'Done!',
                 'Your product has been successfully deleted!',

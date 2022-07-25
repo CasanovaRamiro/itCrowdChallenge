@@ -10,8 +10,10 @@ function UpdateForm({ productName, price, description, image_url }) {
   const navigate = useNavigate();
 
   const updateSubmit = async (values) => {
-    await axios.put(`/products/${id}`, values);
-    navigate("/admin");
+    const update = await axios.put(`/products/${id}`, values);
+    if(update.data){
+      navigate("/admin");
+    }
   };
   return (
     <Formik

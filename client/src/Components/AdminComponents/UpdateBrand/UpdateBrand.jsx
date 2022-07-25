@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 function UpdateBrand({ id, logo_url, name }) {
   const navigate = useNavigate();
   const updateSubmit = async (values) => {
-    await axios.put(`/brands/${id}`, values);
-    navigate("/admin");
+    const update = await axios.put(`/brands/${id}`, values);
+    if( update.data){
+      navigate("/admin");
+    }
   };
   return (
     <div className={css.continer}>

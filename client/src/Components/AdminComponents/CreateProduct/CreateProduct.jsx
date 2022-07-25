@@ -10,8 +10,10 @@ function CreateProduct() {
   const brands = useAllBrands();
 
   const createSubmit = (values) => {
-    axios.post(`/products`, values);
-    navigate("/admin");
+    const post = axios.post(`/products`, values);
+    if(post.data){
+      navigate("/admin");
+    }
   };
   return (
     <div className={css.container}>

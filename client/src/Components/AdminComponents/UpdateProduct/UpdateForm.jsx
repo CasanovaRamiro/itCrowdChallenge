@@ -4,16 +4,26 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { productValidationSchema } from "../../../ValidationSchemas/productUpdateValidationSchema";
 import axios from "axios";
 import css from "./UpdateProduct.module.css";
+import Swal from 'sweetalert2'
 
 function UpdateForm({ productName, price, description, image_url }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const updateSubmit = async (values) => {
-    const update = await axios.put(`/products/${id}`, values);
-    if(update.data){
+    await axios.put(`/products/${id}`, values);
+    Swal.fire({
+      title: 'Product Created!',
+      text: "the product was successfully created!",
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Go Back to Menu'
+    }).then((result) => {
+      if (result.isConfirmed) {    
       navigate("/admin");
-    }
+      }
+    })
   };
   return (
     <Formik

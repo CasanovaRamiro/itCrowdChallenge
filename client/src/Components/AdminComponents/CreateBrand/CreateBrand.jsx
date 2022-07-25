@@ -4,14 +4,24 @@ import { brandValidationSchema } from "../../../ValidationSchemas/brandValidatio
 import axios from "axios";
 import css from "./CreateBrand.module.css";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 function CreateBrand() {
   const navigate = useNavigate();
   const updateSubmit = async (values) => {
-     const post = await axios.post(`/brands`, values);
-     if (post.data){
+     await axios.post(`/brands`, values);
+     Swal.fire({
+      title: 'Product Created!',
+      text: "the product was successfully created!",
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Go Back to Menu'
+    }).then((result) => {
+      if (result.isConfirmed) {    
       navigate("/admin");
-     }
+      }
+    })
     
   };
   return (

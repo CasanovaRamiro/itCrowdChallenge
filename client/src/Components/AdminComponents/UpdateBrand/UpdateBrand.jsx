@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-
+import Swal from 'sweetalert2'
 import { brandValidationSchema } from "../../../ValidationSchemas/brandValidationSchema";
 import axios from "axios";
 import css from "./UpdateBrand.module.css";
@@ -8,10 +8,19 @@ import { useNavigate } from "react-router-dom";
 function UpdateBrand({ id, logo_url, name }) {
   const navigate = useNavigate();
   const updateSubmit = async (values) => {
-    const update = await axios.put(`/brands/${id}`, values);
-    if( update.data){
+    await axios.put(`/brands/${id}`, values);
+    Swal.fire({
+      title: 'Product Created!',
+      text: "the product was successfully created!",
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Go Back to Menu'
+    }).then((result) => {
+      if (result.isConfirmed) {    
       navigate("/admin");
-    }
+      }
+    })
   };
   return (
     <div className={css.continer}>

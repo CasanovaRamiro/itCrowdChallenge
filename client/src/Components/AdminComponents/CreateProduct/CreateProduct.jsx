@@ -11,7 +11,7 @@ function CreateProduct() {
   const brands = useAllBrands();
 
   const createSubmit = (values) => {
-    const post = axios.post(`/products`, values);
+    axios.post(`/products`, values);
     Swal.fire({
       title: 'Product Created!',
       text: "the product was successfully created!",
@@ -20,14 +20,10 @@ function CreateProduct() {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Go Back to Menu'
     }).then((result) => {
-      if (result.isConfirmed) {
-       
+      if (result.isConfirmed) {    
       navigate("/admin");
-    
-        
       }
     })
-    
   };
   return (
     <div className={css.container}>

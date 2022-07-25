@@ -71,7 +71,6 @@ function CreateProduct() {
               />
               <ErrorMessage
                 name="image_url"
-                // className={css.error}
                 component={() => (
                   <div className={css.error}>{errors.image_url}</div>
                 )}

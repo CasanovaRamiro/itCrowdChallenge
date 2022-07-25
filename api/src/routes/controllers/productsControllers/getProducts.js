@@ -1,9 +1,6 @@
 require('dotenv').config();
 const {Products, Brands} = require('../../../db');
 
-//Info de la api.
-
-//Info de la db.
 const getAllDb = async () => {
         return await Products.findAll({
             include: {
@@ -16,7 +13,6 @@ const getAllDb = async () => {
         });  
 };
 
-//Info de la API y Db.
 const getProducts = async() => {
    const dataDb = await getAllDb();
    return dataDb;

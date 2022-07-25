@@ -8,8 +8,11 @@ import { useNavigate } from "react-router-dom";
 function CreateBrand() {
   const navigate = useNavigate();
   const updateSubmit = async (values) => {
-    await axios.post(`/brands`, values);
-    navigate("/admin");
+     const post = await axios.post(`/brands`, values);
+     if (post.data){
+      navigate("/admin");
+     }
+    
   };
   return (
    <div className={css.container}>

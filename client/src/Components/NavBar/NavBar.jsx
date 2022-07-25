@@ -13,10 +13,6 @@ function NavBar() {
         <NavLink to={"/admin"} style={{ textDecoration: "none" }}>
           <span className={css.btn}>Admin</span>
         </NavLink>
-        {/* <NavLink to={"/login"} style={{ textDecoration: "none" }}>
-          <span className={css.btn}>Log In</span>
-        </NavLink> */}
-        
       </div>
 
       

@@ -9,7 +9,6 @@ const {deleteBrand}=require('./controllers/brandsControllers/deleteBrand')
 router.get('/', async (req, res) => {
     try {
         const brands = await getAllBrands();
-        console.log('i got here!!! very good!')
         res.send(brands)
     } catch (error) {
         res.status(404).send(`Error ${res.statusCode} ${error}`);
@@ -20,7 +19,6 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const brand = await findBrandById(id);
-    console.log("i got here!!! very good!");
     res.send(brand);
   } catch (error) {
     res.status(404).send(`Error ${res.statusCode} ${error}`);
@@ -37,7 +35,6 @@ router.post('/', async (req, res) => {
             name,
             logo_url
             )
-        console.log('brand should be created!!! very good!')
         res.send('brand should be created!!! very good!')
     } catch (error) {
         res.status(404).send(`Error ${res.statusCode} ${error}`);
@@ -61,7 +58,6 @@ router.put("/:id", async (req, res) => {
           name,
           logo_url,
         );
-        console.log("updated successfully");
         res.send("brand was updated!!! very good!");
       } catch (error) {
         res.status(404).send(`Error ${res.statusCode} ${error}`);
@@ -86,7 +82,6 @@ router.put("/:id", async (req, res) => {
           await deleteBrand(
             brandToDelete
           );
-          console.log("Brand deleted successfully");
           res.send("brand was deleted!!! very good!");
         } catch (error) {
           res.status(404).send(`Error ${res.statusCode} ${error}`);

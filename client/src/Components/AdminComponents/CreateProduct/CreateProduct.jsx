@@ -4,6 +4,7 @@ import { productValidationSchema } from "../../../ValidationSchemas/productCreat
 import axios from "axios";
 import useAllBrands from "../../../Hooks/useAllBrands";
 import css from "./CreateProduct.module.css";
+import Swal from 'sweetalert2'
 
 function CreateProduct() {
   const navigate = useNavigate();
@@ -20,9 +21,9 @@ function CreateProduct() {
       confirmButtonText: 'Go Back to Menu'
     }).then((result) => {
       if (result.isConfirmed) {
-        if(post.data){
+       
       navigate("/admin");
-    }
+    
         
       }
     })

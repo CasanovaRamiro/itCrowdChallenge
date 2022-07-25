@@ -1,15 +1,16 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
-import { productValidationSchema } from "../../../ValidationSchemas/productUpdateValidationSchema";
+import { productValidationSchema } from "../../../ValidationSchemas/productCreateValidationSchema";
 import axios from "axios";
 import css from "./UpdateProduct.module.css";
 import Swal from 'sweetalert2'
+import useAllBrands from "../../../Hooks/useAllBrands";
 
-function UpdateForm({ productName, price, description, image_url }) {
+function UpdateForm({ productName, price, description, image_url, brandName }) {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const brands = useAllBrands();
   const updateSubmit = async (values) => {
     await axios.put(`/products/${id}`, values);
     Swal.fire({
@@ -32,6 +33,7 @@ function UpdateForm({ productName, price, description, image_url }) {
         image_url: image_url,
         price: price,
         description: description,
+        brandName: brandName[0].name,
       }}
       validationSchema={productValidationSchema}
       onSubmit={(values) => {
@@ -97,6 +99,25 @@ function UpdateForm({ productName, price, description, image_url }) {
               )}
             />
           </div>
+          <div className={css.inputContainer}>
+              <label htmlFor="brandName">Brand</label>
+              <Field as="select" name="brandName">
+                <option value="">Select Brand</option>
+                {brands?.map((e) => {
+                  return (
+                    <option key={e.id} value={e.name}>
+                      {e.name}
+                    </option>
+                  );
+                })}
+              </Field>
+              <ErrorMessage
+                name="brandName"
+                component={() => (
+                  <div className={css.error}>{errors.brandName}</div>
+                )}
+              />
+            </div>
           <div className={css.inputContainer}>
             <button  className={css.submit} type="submit">Submit</button>
           </div>

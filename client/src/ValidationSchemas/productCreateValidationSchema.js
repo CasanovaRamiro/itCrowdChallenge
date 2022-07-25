@@ -12,6 +12,7 @@ export const productValidationSchema = yup.object().shape({
     price:yup
     .number()
     .positive()
+    .integer()
     .required(),
     description:yup
     .string()

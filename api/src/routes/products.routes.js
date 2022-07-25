@@ -56,7 +56,7 @@ router.put("/:id", async (req, res) => {
     res.status(404).send(`Error ${res.statusCode} ${error}`);
   }
  
-  const { name, description, image_url, price } = req.body;
+  const { name, description, image_url, price, brandName } = req.body;
   if (productToUpdate?.dataValues) {
     try {
       await updateProducts(
@@ -65,7 +65,8 @@ router.put("/:id", async (req, res) => {
         name,
         description,
         image_url,
-        price
+        price,
+        brandName
       );
       res.send("product was updated!!! very good!");
     } catch (error) {
